@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>NLP API</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.css">
+
+  <style>
+    body {
+      background-color: #eee;
+    }
+
+    .image-div {
+      height: 42rem;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container-fluid  m-0 p-0">
+
+    <div class="image-div shadow p-3 mb-3 bg-body rounded m-3">
+      <img src="{{ url_for('static', filename='../static/6533352.jpg') }}" id="img1">
+    </div>
+
+    <div class="d-flex justify-content-center my-4">
+      <h2 style="color: rgb(10, 10, 138);">Financial Statement Analysis</h2>
+    </div>
+
+    <div class="shadow p-3 mb-3 bg-body rounded m-3">
+      <div class="row">
+        <h3 class="ps-3 pb-2">Project Idea ?</h3>
+        <hr>
+        <div class="col-6" style="margin-top: 1rem;"><img
+            src="{{ url_for('static', filename='../static/business-man-holding-paper-with-finance-inscription.jpg') }}">
+        </div>
+
+        <div class="col-6" style="margin-top: 1rem;">
+          <div class="">
+            <ul class="fs-4" style="list-style: square;">
+              <li>The project is <span style="color: blue; ">" Financial Statement Analysis
+                  "</span>.</li>
+              <li>The following project is intended for advancing financial sentiment analysis research.</li>
+              <li>It's two datasets (FiQA, Financial PhraseBank) combined into one easy-to-use CSV file.</li>
+              <li>It provides financial sentences with sentiment labels.</li>
+            </ul>
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="shadow p-3 mb-3 bg-body rounded m-3">
+      <div class="row">
+        <h3 class="ps-3 pb-2">Project Dataset </h3>
+        <hr>
+
+        <div class="col-6">
+          <div class="" style="margin-top: 2rem;">
+            <ul class="fs-4" style="list-style: square;">
+              <li>dataset comprising <span style="color: blue;">7200 rows</span> or records per review, with <span
+                  style="color: blue;">two columns.</span> </li>
+              <li>The first column likely contains sentences extracted from financial statements.</li>
+              <li>the second column contains sentiment labels categorizing each sentence as negative, positive, or
+                neutral.</li>
+            </ul>
+            <img class="" style="margin-top: 11rem;"
+              src="{{ url_for('static', filename='../static/classes-count.png') }}">
+          </div>
+
+        </div>
+        <div class="col-6" style="border-left: 1px solid black;"><img
+            src="{{ url_for('static', filename='../static/data.png') }}"></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="shadow p-3 mb-3 bg-body rounded m-3 ">
+    <div class="row">
+      <h3 class="ps-3 pb-2">Basic Data Analysis and Cleaning on Dataset</h3>
+      <hr>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Words<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/num-words.png') }}"></div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Characters<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/num-characters.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Numerics<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/num-numerics.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Digits<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/num-digits.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Stop Words<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/num-stopwords.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of Special Characters<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/special-characters.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Number of uppercase Words<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/num-uppercase.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Remove Stop Words<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/remove-sw.png') }}">
+      </div>
+      <div class="col-4 py-3" style="border: 2px solid black;">Remove Most Frequent Words<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/remove-most.png') }}">
+      </div>
+
+    </div>
+  </div>
+  <div class="shadow p-3 mb-3 bg-body rounded m-3 ">
+    <div class="row d-flex justify-content-center">
+      <h3 class="ps-3 pb-2">Histograms and Barchars</h3>
+      <hr>
+      <div class="col-6 py-3" style="border: 2px solid black;">Histogram of Sentences Length<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/hist-sentenceslength.png') }}">
+      </div>
+      <div class="col-6 py-3" style="border: 2px solid black;">Histogram of Sentences Length for each Class<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/hist-sentenceseachclass.png') }}">
+      </div>
+      <div class="col-6 py-3" style="border: 2px solid black;">Barchar for most frequent words after remove stop words
+        <img style="object-fit: contain;" src="{{ url_for('static', filename='../static/hist-most-after-sw.png') }}">
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+  <div class="shadow p-3 mb-3 bg-body rounded m-3 ">
+    <div class="row d-flex justify-content-center">
+      <h3 class="ps-3 pb-2">Model Building with Naive Bayes</h3>
+      <hr>
+      <div class="col-6 py-3" style="border: 2px solid black;">Classification Report for Naive Bayes<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/naivebayes.png') }}">
+      </div>
+      <div class="col-6 py-3" style="border: 2px solid black;">Confusion Matrix<img style="object-fit: contain;"
+          src="{{ url_for('static', filename='../static/confusion-matrix.png') }}">
+      </div>
+      <div class="col-6 py-3" style="border: 2px solid black;">Barchar for Precition , recall and f1_score
+        <img style="object-fit: contain;" src="{{ url_for('static', filename='../static/measuers.png') }}">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="shadow p-3 mb-3 bg-body rounded m-3 ">
+    <div class="row d-flex justify-content-center">
+      <h3 class="ps-3 pb-2">Model Building with Logistic Regression and Random Forest</h3>
+      <hr>
+      <div class="col-6 py-3" style="border: 2px solid black;">Classification Report for Logistic Regression<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/log.png') }}">
+      </div>
+      <div class="col-6 py-3" style="border: 2px solid black;">Classification Report for Random Forest<img
+          style="object-fit: contain;" src="{{ url_for('static', filename='../static/random.png') }}">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="shadow p-3 mb-3 bg-body rounded m-3 ">
+    <div class="row d-flex justify-content-center">
+      <h3 class="ps-3 pb-2">Let's write your opinion and know type</h3>
+      <hr>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <div class="d-flex">
+
+        <div class="ms-3">
+          <form action="{{ url_for('predict')}}" method="post" id="form">
+            <label class="label mb-2" for="Sentence">Opinion</label>
+            <br><textarea class="p-2" name="Sentence" id="Sentence" required="required"
+              style="height: 150px; width: 300px; font-size: large; border-radius: 8px;"></textarea>
+            <div class=" d-flex justify-content-center"><button type="submit"
+                class="btn btn-primary btn-block btn-large" id="sub">Predict</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="d-flex align-items-center ms-3">
+
+          <h4 class="">{{ prediction_text}}</h4>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
